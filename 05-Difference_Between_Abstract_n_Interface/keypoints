@@ -1,0 +1,39 @@
+Key Points:
+
+Abstract class:
+---------------
+
+An abstract class can have constructors, instance variables, concrete methods, 
+and abstract methods.
+It provides a common base for its subclasses by defining common behavior and attributes.
+
+Subclasses of an abstract class must implement all the abstract methods, or they must be 
+declared as abstract themselves.
+An abstract class cannot be instantiated, but it can be extended by other classes.
+It is useful when you want to provide a common implementation and ensure that certain methods
+are implemented by subclasses.
+
+Interface:
+---------------
+
+An interface defines a contract that a class must follow.
+It can only have constants and method signatures, but no method implementations.
+All methods in an interface are implicitly public and abstract.
+A class can implement multiple interfaces.
+Interfaces are useful when you want to enforce a specific behavior or provide multiple
+inheritance of types.
+In the provided example, the Vehicle abstract class defines the start() method as an 
+abstract method and the stop() method as a concrete method. 
+The Drivable interface defines the drive() method without any implementation.
+
+The Car class extends the Vehicle class and implements the Drivable interface.
+ It provides the implementation for the start() method and the drive() method.
+
+The key difference between an abstract class and an interface is that an abstract class
+can have both concrete and abstract methods, while an interface can only have method
+signatures without any implementations. Additionally, a class can extend only
+one abstract class but can implement multiple interfaces.
+
+By utilizing abstract classes and interfaces, you can structure your code to achieve code 
+reusability, provide common behavior, and define contracts for classes to follow in an 
+organized manner.
