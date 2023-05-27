@@ -6,14 +6,17 @@ import java.util.Random;
 class Producer {
 	private Queue<Integer> queue;
 	private int maxSize;
+	private int maxIterations;
 
-	public Producer(Queue<Integer> queue, int maxSize) {
+	public Producer(Queue<Integer> queue, int maxSize, int maxIterations) {
 		this.queue = queue;
 		this.maxSize = maxSize;
+		this.maxIterations = maxIterations;
 	}
 
 	public void produce() {
-		while (true) {
+		int iterations = 0;
+		while (iterations < maxIterations) {
 			synchronized (queue) {
 				while (queue.size() >= maxSize) {
 					try {
@@ -30,6 +33,7 @@ class Producer {
 
 				queue.notifyAll();
 			}
+			iterations++;
 		}
 	}
 }
