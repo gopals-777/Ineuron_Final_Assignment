@@ -16,7 +16,8 @@ public class Main {
 		Session session = null;
 		Transaction transaction = null;
 		
-		
+		while(true) {
+			
 			boolean flag = false;
 			Scanner sc=new Scanner(System.in);
 			System.out.println("Enter the ur choice [1/2]:1->INSERT 2->READ:");
@@ -54,8 +55,6 @@ public class Main {
 					System.out.println("Object not saved to database...");
 				}
 
-				HibernateUtil.closeSession(session);
-				HibernateUtil.closeSessionFactory();
 			}
 			
 			break;
@@ -85,14 +84,14 @@ public class Main {
 				e.printStackTrace();
 			} catch (Exception e) {
 				e.printStackTrace();
-			} finally {
-				HibernateUtil.closeSession(session);
-				HibernateUtil.closeSessionFactory();
-			}
+			} 
 			break;
 		default:
 			System.out.println("Invalid input ");
 			
+		}
+		HibernateUtil.closeSession(session);
+		HibernateUtil.closeSessionFactory();
 		}
 
 		}
