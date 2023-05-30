@@ -1,4 +1,4 @@
-package com.getitdone.model;
+package in.grs.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
